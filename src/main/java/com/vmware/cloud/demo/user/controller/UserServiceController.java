@@ -25,12 +25,12 @@ public class UserServiceController {
         return userService.getUser(id);
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     public void updateUser(@RequestBody User user) {
     	userService.updateUser(user);
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public void createUser(@RequestBody User user) {
     	userService.createUser(user);
     }
