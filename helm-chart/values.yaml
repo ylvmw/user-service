@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: ylvmw/user-service
+  registry: 10.193.12.119
+  repository: tianchi/user-service
   tag: latest
   pullPolicy: IfNotPresent
 
