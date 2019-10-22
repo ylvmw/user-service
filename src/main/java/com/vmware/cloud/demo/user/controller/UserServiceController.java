@@ -1,5 +1,7 @@
 package com.vmware.cloud.demo.user.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,12 +15,16 @@ import com.vmware.cloud.demo.user.model.User;
 import com.vmware.cloud.demo.user.service.UserService;
 
 @RestController
-@RequestMapping(value="v1/user")
+@RequestMapping(value="v1/users")
 public class UserServiceController {
 	
     @Autowired
     private UserService userService;
 
+    @RequestMapping(method = RequestMethod.GET)
+    public List<User> getUsers() {
+        return userService.getUsers();
+    }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable("id") String id) {
