@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>User Service</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style>
+		#users {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 50%;
+			margin: auto;
+		}		
+		#users td, #users th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}		
+		#users tr:nth-child(even){background-color: #f2f2f2;}
+		#users tr:hover {background-color: #ddd;}		
+		#users th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #4CAF50;
+			color: white;
+	}
+	</style>
+</head>
+<body>
+	<table id="users">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user: ${users}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.gender}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
